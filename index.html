@@ -29,25 +29,28 @@ body{--tfont:'BWTile','Montserrat','Segoe UI',system-ui,sans-serif;
 .ts-dark{--tf1:#2f3745;--tf2:#1b212b;--th:#7285a3;--te:#0b0e13;--tk:#ffffff;--rx:8px}
 .ts-clean{--tf1:#fbfbfd;--tf2:#f0f0f5;--th:#ffffff;--te:#c9c9d3;--tk:#333;--rx:16px}
 .fin-wood{--grain:.38}
-#app{width:min(100vw,480px);height:100%;display:flex;flex-direction:column;align-items:center;gap:clamp(6px,1.1dvh,12px);padding:6px 8px;overflow:hidden}
-#top{width:100%;display:flex;align-items:center;gap:6px;background:var(--pn);border:1px solid var(--bd);border-radius:14px;padding:4px 6px 4px 10px;box-shadow:inset 0 1px 0 var(--hi),0 1px 2px var(--shd),0 8px 16px -10px var(--shd);flex:none}
-#logo{width:26px;flex:none}
-@media (max-width:429px){#title{display:none}#top{justify-content:space-between}}
-#top .sc{flex:1}
-#title{font-family:Georgia,'Times New Roman',serif;font-weight:700;font-size:18px;flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.sc{text-align:center;line-height:1.05;font-size:10px;color:var(--mu);padding:3px 8px;border-radius:10px;border:1px solid transparent;min-width:0}
-.sc b{display:block;font-size:17px;color:var(--ac)}
-.sc.on{background:rgba(245,184,62,.15);border-color:var(--ac)}
-.th-light .sc b{color:var(--tx)}.th-light .sc.on{background:#FFF1CF}
-#bagi{display:flex;align-items:center;gap:4px;font-size:14px;font-weight:700;min-height:0;height:34px;padding:0 8px;border-radius:10px;box-shadow:none;background:transparent}
-#bagi.off{pointer-events:none;border-color:transparent}
+#app{width:min(100vw,480px);height:100%;display:flex;flex-direction:column;align-items:center;gap:clamp(6px,1.5dvh,14px);padding:6px 8px 8px;overflow:hidden}
+#top{width:100%;display:flex;align-items:center;gap:7px;background:var(--pn);border:1px solid var(--bd);border-radius:16px;padding:5px 4px 5px 8px;box-shadow:inset 0 1px 0 var(--hi),0 1px 2px var(--shd),0 8px 16px -10px var(--shd);flex:none}
+#logo{width:40px;height:40px;flex:none;filter:drop-shadow(0 2px 2px rgba(60,40,10,.22))}
+.LG{font-family:var(--tfont);font-weight:800;font-size:33px;fill:#292015}
+#title{font-family:Georgia,'Times New Roman','Noto Serif',serif;font-weight:700;font-size:clamp(17px,5.4vw,26px);letter-spacing:-.01em;flex:1;min-width:0;white-space:nowrap;overflow:hidden}
+#sbox{display:flex;align-items:stretch;flex:none}
+.sc{display:flex;flex-direction:column;justify-content:center;text-align:center;line-height:1.05;font-size:10px;color:var(--mu);padding:1px 6px;border-left:1px solid var(--bd)}
+.sc span{display:flex;align-items:center;justify-content:center;gap:4px}
+.dt{width:6px;height:6px;border-radius:50%;background:#2E7BEF;display:inline-block}.sc.cp .dt{background:#9aa0a8}
+.sc b{display:block;font-size:20px;color:var(--tx);margin-top:1px}
+.sc.on span{color:var(--tx);font-weight:700}.sc.on b{color:var(--ac2)}
+#bagi{flex-direction:row;gap:3px;min-height:0;height:auto;padding:1px 2px 1px 6px;border:0;border-left:1px solid var(--bd);border-radius:0;background:transparent;box-shadow:none;color:var(--mu)}
+#bagi .sc{border:0;padding:0}
+#bagi.off{pointer-events:none}
 #bagi svg{width:20px;height:20px}
-#bDir{min-height:34px;min-width:0;font-size:12px;font-weight:600;padding:0 10px;border-radius:10px;flex:none}
-#bw{width:min(100%,calc(100dvh - 335px));min-width:250px;padding:8px;border-radius:18px;background:linear-gradient(145deg,var(--frame),var(--frame2));box-shadow:inset 0 1.5px 0 rgba(255,255,255,.4),inset 0 -3px 0 rgba(0,0,0,.16),0 1px 2px var(--shd),0 16px 26px -12px var(--shd);flex:none}
-body.noscr #bw{width:min(100%,calc(100dvh - 222px))}
-#vp{width:100%;aspect-ratio:1;overflow:hidden;position:relative;touch-action:none;background:#222;border-radius:9px}
+#bDir{min-height:28px;min-width:62px;padding:0;gap:0;overflow:hidden;border-radius:10px;flex:none}
+#bDir span{flex:1;display:flex;align-items:center;justify-content:center;align-self:stretch;font-size:17px;font-weight:800;color:var(--mu)}
+#bDir span.on{background:var(--ac2);color:#fff}
+#bw{width:100%;padding:3px;border-radius:14px;background:linear-gradient(145deg,var(--frame),var(--frame2));box-shadow:inset 0 1px 0 rgba(255,255,255,.4),inset 0 -2px 0 rgba(0,0,0,.14),0 1px 2px var(--shd),0 14px 24px -12px var(--shd);flex:none}
+#vp{width:100%;aspect-ratio:1;overflow:hidden;position:relative;touch-action:none;background:#222;border-radius:11px}
 #vp::after{content:'';position:absolute;inset:0;border-radius:inherit;box-shadow:inset 0 2px 7px rgba(0,0,0,.3),inset 0 0 0 1px rgba(0,0,0,.2);pointer-events:none;z-index:6}
-#board{position:absolute;left:0;top:0;transform-origin:0 0;display:grid;--z:1;background:var(--line);
+#board{position:absolute;left:0;top:0;transform-origin:0 0;will-change:transform;display:grid;--z:1;background:var(--line);
  --bg-plain:var(--cell);--fg-plain:#fff;--bg-tw:var(--b-tw);--fg-tw:#fff;--bg-dw:var(--b-dw);--fg-dw:#fff;--bg-tl:var(--b-tl);--fg-tl:#fff;--bg-dl:var(--b-dl);--fg-dl:#fff;--bg-st:var(--b-dw);--fg-st:#fff;--line:var(--ln)}
 .cell{position:relative;contain:layout style;width:40px;height:40px;border:1px solid var(--line);border-radius:4px;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:13px}
 .plain{background:var(--bg-plain)}
@@ -78,25 +81,24 @@ body.noscr #bw{width:min(100%,calc(100dvh - 222px))}
 .tile.faded{outline:1px dashed rgba(170,170,170,.6);outline-offset:-1px;border-radius:12px}
 .tile.unm{--tf1:#ffe3e3;--tf2:#f7c4c4;--te:#d97b7b;--th:#fff;--tk:#8a2b2b;outline:2px dashed #d97b7b;outline-offset:-2px;border-radius:12px}
 .bd{position:absolute;left:-4px;top:-11px;z-index:3;background:#0a57c2;color:#fff;border-radius:12px;padding:1px 6px;font-size:calc(11px/var(--z));font-weight:700;line-height:1.2;pointer-events:none;box-shadow:0 2px 5px rgba(0,0,0,.35)}
+.bd.e-t{top:auto;bottom:-11px}.bd.e-l{left:1px}.bd.e-r{left:auto;right:1px}
 .bd.x{background:#d32f2f}.bd.g{background:#6b7280;opacity:.92}.bd.g.x{background:#9a4a4a}.bd.cm{background:#e8590c}
 .pv{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);z-index:2;background:rgba(0,0,0,.55);color:#fff;border-radius:10px;padding:0 5px;opacity:.85;font-size:calc(10px/var(--z));font-weight:700;line-height:1.25;pointer-events:none}
 .pv.x{color:#ffb4b4}
 .cell.tgt .pv{display:none}
 #bar{width:100%;display:flex;align-items:center;gap:6px;flex:none}
-#status{flex:1;min-width:0;min-height:20px;font-size:13px;font-weight:600;line-height:1.3;padding:0 6px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-#tray{width:100%;background:var(--tray);border-radius:16px;padding:7px;box-shadow:inset 0 3px 8px rgba(0,0,0,.42),inset 0 0 0 1px rgba(255,255,255,.05),0 1px 0 var(--hi),0 10px 18px -12px var(--shd);flex:none}
+#status{flex:1;min-width:0;min-height:18px;font-size:13px;font-weight:600;line-height:1.3;padding:0 6px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#tray{width:100%;background:var(--tray);border-radius:16px;padding:6px;box-shadow:inset 0 3px 8px rgba(0,0,0,.42),inset 0 0 0 1px rgba(255,255,255,.05),0 1px 0 var(--hi),0 10px 18px -12px var(--shd);flex:none}
 .th-light #tray{background:linear-gradient(#EBD4A9,#D4B581);box-shadow:inset 0 3px 7px rgba(110,70,20,.4),inset 0 0 0 1px #C9A870,0 10px 18px -12px var(--shd)}
 #tray.hot{outline:3px solid var(--ac2)}
-#rack{display:grid;grid-template-columns:repeat(6,1fr);gap:6px;touch-action:none}
+#rack{display:grid;grid-template-columns:repeat(6,1fr);gap:5px;touch-action:none}
 .slot{aspect-ratio:1;border-radius:10px;background:rgba(0,0,0,.2);box-shadow:inset 0 2px 4px rgba(0,0,0,.32)}
 .th-light .slot{background:rgba(110,70,20,.14);box-shadow:inset 0 2px 3px rgba(110,70,20,.3)}
 .slot.ts{outline:3px solid var(--ac2);outline-offset:-1px}
 #scr{width:100%;background:var(--pn);border:1px solid var(--bd);border-radius:14px;padding:5px 8px;box-shadow:inset 0 1px 0 var(--hi),0 1px 2px var(--shd),0 10px 16px -12px var(--shd);flex:none}
 #scr .sh{display:flex;align-items:center;gap:6px;margin-bottom:4px}
 #scr .sh b{font-size:12.5px;flex:1;white-space:nowrap}
-#scr .sh button,#scGrip{min-height:30px;padding:2px 9px;white-space:nowrap;font-size:12px;border-radius:10px}
-#scGrip:not(:disabled){background:linear-gradient(#FFD36A,#F3A81F);color:#3a2704;font-weight:700;border-color:#D78F12;box-shadow:inset 0 1px 0 rgba(255,255,255,.6),0 2px 0 #B87A0E}
-#scGrip:disabled{opacity:.4}
+#scr .sh button{min-height:28px;padding:2px 10px;white-space:nowrap;font-size:12px;border-radius:10px}
 #scrow{display:grid;grid-template-columns:repeat(7,1fr);gap:5px;touch-action:none}
 .sslot{aspect-ratio:1;border-radius:10px;border:1.5px dashed rgba(128,128,128,.45)}
 .sslot.f{border-color:transparent}
@@ -108,15 +110,17 @@ body.noscr #bw{width:min(100%,calc(100dvh - 222px))}
 button{background:var(--pn);color:var(--tx);border:1px solid var(--bd);min-height:44px;padding:4px;border-radius:12px;font-size:13px;font-family:inherit;display:inline-flex;align-items:center;justify-content:center;gap:6px;box-shadow:inset 0 1px 0 var(--hi),0 1px 2px var(--shd),0 4px 8px -5px var(--shd);transition:transform .08s ease,filter .08s ease}
 button:active{transform:translateY(1px) scale(.98);filter:brightness(.95)}
 button:disabled{opacity:.45;box-shadow:none}
-button svg{width:20px;height:20px;flex:none}
+button svg{width:19px;height:19px;flex:none}
 .row{display:flex;gap:6px;width:100%;flex:none}
-.row button{flex:1;min-width:0;flex-direction:column;gap:2px;font-size:10.5px;font-weight:600;min-height:52px}
+.row button{flex:1;min-width:0;flex-direction:column;gap:1px;font-size:10px;font-weight:600;min-height:clamp(46px,6.6dvh,58px);padding:2px}
 #bPlay{flex:2.3;flex-direction:row;gap:6px;font-size:15px;font-weight:800;background:linear-gradient(#FFD36A,#F3A81F);color:#3a2704;border-color:#D78F12;box-shadow:inset 0 1px 0 rgba(255,255,255,.65),0 3px 0 #B87A0E,0 10px 14px -8px rgba(243,168,31,.7)}
 #bPlay:active{transform:translateY(2px);box-shadow:inset 0 1px 0 rgba(255,255,255,.65),0 1px 0 #B87A0E}
 #bPlay:disabled{opacity:.5;box-shadow:inset 0 1px 0 rgba(255,255,255,.5),0 3px 0 #B87A0E}
 .ghost{position:fixed;left:0;top:0;pointer-events:none;z-index:20;opacity:.97;will-change:transform}
-.ghost .tile,.tile.ghost{filter:drop-shadow(0 8px 6px rgba(0,0,0,.45))}
-#scGrip{touch-action:none}
+.tile.ghost{filter:drop-shadow(0 6px 5px rgba(0,0,0,.4))}
+.wg.ghost{opacity:.55}.wg.ghost .tile{filter:none}
+#scrow.lift .tile{transform:scale(1.08);outline:2px solid var(--ac);outline-offset:-1px;border-radius:12px;transition:transform .12s}
+#scrow.ghosted .tile{opacity:.3}
 .wg{display:flex;gap:0}.wg.dn{flex-direction:column}
 .ov{position:fixed;inset:0;background:rgba(10,14,20,.6);display:none;align-items:center;justify-content:center;z-index:40;backdrop-filter:blur(2px)}
 .ov.on{display:flex}
@@ -152,18 +156,18 @@ button svg{width:20px;height:20px;flex:none}
  </symbol>
 </defs></svg>
 <div id="app">
-<div id="top"><div id="logo"></div><div id="title">MiniWord</div>
-  <div class="sc" id="sc0"><span>You</span><b id="s0">0</b></div><div class="sc" id="sc1"><span>Computer</span><b id="s1">0</b></div>
-  <button id="bagi" aria-label="Unseen tiles"><span id="bagic"></span><span id="bagn">0</span></button><button id="bDir"></button></div>
+<div id="top"><svg id="logo" viewBox="0 0 48 48" aria-hidden="true"><defs><linearGradient id="lg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FDE9BE"/><stop offset="1" stop-color="#F0C583"/></linearGradient></defs><rect x="2" y="5" width="44" height="41" rx="10" fill="#C98F55"/><rect x="2" y="2" width="44" height="41" rx="10" fill="url(#lg)"/><rect x="3.6" y="3.6" width="40.8" height="37.8" rx="8.6" fill="none" stroke="#fff6df" stroke-width="1.3" opacity=".85"/><text class="LG" x="24" y="35" text-anchor="middle">M</text></svg><div id="title">MiniWord</div>
+  <div id="sbox"><div class="sc" id="sc0"><span><i class="dt"></i>You</span><b id="s0">0</b></div><div class="sc cp" id="sc1"><span><i class="dt"></i>Computer</span><b id="s1">0</b></div>
+  <button id="bagi" aria-label="Unseen tiles"><div class="sc"><span>Bag</span><b id="bagn">0</b></div><span id="bagic"></span></button></div></div>
 <div id="bw"><div id="vp"><div id="board"></div></div></div>
 <div id="bar"><div id="status" role="status" aria-live="polite"></div></div>
 <div id="tray"><div id="rack"></div></div>
 <div id="scr">
-  <div class="sh"><b>Scratch row</b><button id="scPaste">Paste</button><button id="scClr">Clear</button><button id="scGrip">⠿ Drag to board</button></div>
+  <div class="sh"><b>Scratch row</b><button id="bDir" aria-label="Direction"></button><button id="scPaste">Paste</button><button id="scClr">Clear</button></div>
   <div id="scrow"></div>
   <div id="sfb"></div>
 </div>
-<div class="row"><button id="bPlay"><i data-i="play"></i><span id="bPlayT">Play</span></button><button id="bSwap"><i data-i="swap"></i>Swap</button><button id="bPass"><i data-i="pass"></i>Pass</button><button id="bShuffle"><i data-i="shuffle"></i>Shuffle</button><button id="bRecall"><i data-i="recall"></i>Recall</button><button id="bMenu"><i data-i="menu"></i>Menu</button></div>
+<div class="row"><button id="bPlay"><i data-i="play"></i><span id="bPlayT">Play</span></button><button id="bRecall"><i data-i="recall"></i>Recall</button><button id="bShuffle"><i data-i="shuffle"></i>Shuffle</button><button id="bSwap"><i data-i="swap"></i>Swap</button><button id="bPass"><i data-i="pass"></i>Pass</button><button id="bMenu"><i data-i="menu"></i>Menu</button></div>
 </div>
 
 <div class="ov" id="pick"><div class="box"><div>Blank tile: choose a letter</div><div id="letters"></div><button id="pickCancel">Cancel</button></div></div>
@@ -177,7 +181,7 @@ button svg{width:20px;height:20px;flex:none}
 <div class="ov" id="menu"><div class="box">
   <button id="mSimP" style="display:none">Pause simulation</button><button id="mSimS" style="display:none">Stop simulation</button>
   <button id="mSet">Settings</button><button id="mStats">Scores and history</button>
-  <button id="mNew">Cancel game and restart</button><button id="mClose">Close</button><small>MiniWord build 1</small>
+  <button id="mNew">Cancel game and restart</button><button id="mClose">Close</button><small>MiniWord build 2</small>
 </div></div>
 
 <div class="ov" id="stats"><div class="box"><b>Scores and history</b><div id="statBody"></div>
@@ -196,6 +200,10 @@ button svg{width:20px;height:20px;flex:none}
   <h4>Scratch row (helps you)</h4>
   <label class="ck"><input type="checkbox" id="sScr"> Show the scratch row (word check and face points)</label>
   <label class="ck"><input type="checkbox" id="sBest"> Also show the best score the word could make on the board</label>
+  <h4>Zoom</h4>
+  <label>Zoom while placing: <b id="vZl"></b><input type="range" id="sZl" min="100" max="300" step="10"></label>
+  <label>Zoom delay: <b id="vZd"></b><input type="range" id="sZd" min="0" max="800" step="50"></label>
+  <small>Zoom 100% turns the automatic zoom off. Pinch to zoom any time, drag to move the board, double-tap to zoom in or out.</small>
   <h4>Look and feel</h4>
   <label>Board skin<select id="sSkin"></select></label>
   <label>Letter size<input type="range" id="sLsz" min="80" max="150" step="5"></label>
@@ -222,7 +230,7 @@ C.tiers = C.tiers || { R: 1, S: 1, T: 1, N: 1, E: 1, A: 1, D: 2, G: 2, I: 2, L: 
 const ABC = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', VOW = 'AEIOU', SMAX = C.rackSize + 1;
 const $ = id => document.getElementById(id);
 const vp = $('vp'), board = $('board');
-let S = { theme: 'light', tiles: 'classic', fin: 'smooth', noRare: true, hBal: true, hDup: true, hHard: true, showBag: true,
+let S = { theme: 'light', zl: 180, zd: 250, tiles: 'classic', fin: 'smooth', noRare: true, hBal: true, hDup: true, hHard: true, showBag: true,
           level: 'hard', first: 'random', lastFirst: 'computer', skin: 'classic', lsz: 100, psz: 100, haptic: true, lite: false,
           scratch: true, sBest: false, dir: 'across' };
 let G = null, selected = -1, busy = true, cur = null, msg = '', HL = null, SIM = null;
@@ -502,6 +510,11 @@ function drawScratch(arr, hi, lift) {
     row.appendChild(s);
   }
 }
+function putBd(el, b) {   // score badges on the outer rows and columns are kept inside the board
+  const i = cells.indexOf(el), r = (i / N) | 0, c = i % N;
+  if (r === 0) b.classList.add('e-t'); if (c === 0) b.classList.add('e-l'); if (c === N - 1) b.classList.add('e-r');
+  el.appendChild(b);
+}
 function render() {
   cells.forEach(d => { d.querySelectorAll('.tile,.bd').forEach(e => e.remove()); d.classList.remove('has', 'last', 'cmp', 'cand'); });
   for (let r = 0; r < N; r++) for (let c = 0; c < N; c++) {
@@ -511,7 +524,7 @@ function render() {
   G.last.forEach(([r, c]) => cells[r * N + c].classList.add('last'));
   if (HL && G.last.length) {   // computer's move: glow and show its points until the player acts
     G.last.forEach(([r, c]) => cells[r * N + c].classList.add('cmp'));
-    const [r, c] = G.last[0], b = document.createElement('span'); b.className = 'bd cm'; b.textContent = '+' + HL.total; cells[r * N + c].appendChild(b);
+    const [r, c] = G.last[0], b = document.createElement('span'); b.className = 'bd cm'; b.textContent = '+' + HL.total; putBd(cells[r * N + c], b);
   }
   G.placed.forEach(p => { const d = cells[p.r * N + p.c], e = tileEl(p.t); e.classList.add('new'); d.appendChild(e); d.classList.add('has'); });
   drawRack(G.rack, -1, -1); drawScratch(G.sc, -1, -1); scFeedback();
@@ -530,11 +543,11 @@ function evaluate() {
   if (r.err) { status(r.err); off(); return; }
   const bad = r.words.filter(w => !w.ok);
   if (bad.length) {
-    bad.forEach(w => { const b = document.createElement('span'); b.className = 'bd x'; b.textContent = '\u2715'; cells[w.r * N + w.c].appendChild(b); });
+    bad.forEach(w => { const b = document.createElement('span'); b.className = 'bd x'; b.textContent = '\u2715'; putBd(cells[w.r * N + w.c], b); });
     if (dropBuzz) buzz(40);
     status('Not a word: ' + bad.map(w => w.w).join(', ')); off(); return;
   }
-  const m = r.words[0], b = document.createElement('span'); b.className = 'bd'; b.textContent = r.total; cells[m.r * N + m.c].appendChild(b);
+  const m = r.words[0], b = document.createElement('span'); b.className = 'bd'; b.textContent = r.total; putBd(cells[m.r * N + m.c], b);
   status(r.words.map(w => w.w + ' ' + w.pts).join(', ') + (r.bingo ? ', BINGO +' + r.bingo : '') + ' = ' + r.total);
   cur = r; $('bPlay').disabled = G.over || G.turn !== 0; $('bPlayT').textContent = 'Play ' + r.total;
 }
@@ -581,7 +594,7 @@ function recallAll() {   // a word placed from the scratch row goes back to the 
   const keep = G.grp && G.placed.length && S.scratch ? G.placed.map(p => ({ t: p.t, as: p.t.as })) : null;
   G.placed.splice(0).forEach(backToRack); G.grp = false; selected = -1;
   if (keep) G.sc = keep.map(k => { if (k.as) k.t.as = k.as; return k.t; }).concat(G.sc).slice(0, SMAX);
-  refresh();
+  refresh(); zoomFit();
 }
 function shuffle() {
   if (busy) return;
@@ -599,6 +612,7 @@ for (const ch of ABC) {
 $('pickCancel').onclick = () => { pending = null; $('pick').classList.remove('on'); };
 
 // ---------- scratch row ----------
+const scOK = () => G.sc.length && !G.sc.some(t => t.um) && !scWord().includes('?') && W.has(scWord());
 const scWord = () => G.sc.map(t => t.ch === '?' ? (t.as || '?') : t.ch).join('');
 const tLetter = t => t.ch === '?' ? t.as : t.ch;
 function scCells(tiles, r, c, dir) {   // squares the tiles would take starting at (r,c), skipping letters already on the board
@@ -621,7 +635,7 @@ function bestOnBoard(tiles) {
   return best;
 }
 function scFeedback() {
-  const fb = $('sfb'), grip = $('scGrip'); grip.disabled = true;
+  const fb = $('sfb');
   if (!S.scratch) return;
   if (!G.sc.length) { fb.innerHTML = '<span class="t mu">Drag tiles here to try words, or paste up to ' + SMAX + ' letters.</span>'; return; }
   const um = G.sc.filter(t => t.um), w = scWord();
@@ -630,9 +644,8 @@ function scFeedback() {
   else if (w.includes('?')) h = '<span class="t warn">Choose a letter for the blank.</span>';
   else {
     const pts = G.sc.reduce((s, t) => s + (t.ch === '?' ? 0 : C.values[t.ch]), 0), ok = W.has(w);
-    h = '<span class="t ' + (ok ? 'ok' : 'no') + '">' + (ok ? '\u2713 ' : '\u2715 ') + w + (ok ? ' is a word. Face value ' + pts : ' is not a word') + '</span>';
+    h = '<span class="t ' + (ok ? 'ok' : 'no') + '">' + (ok ? '\u2713 ' : '\u2715 ') + w + (ok ? ': face value ' + pts + '. Hold a tile to lift the word.' : ' is not a word') + '</span>';
     if (ok && S.sBest) { const b = bestOnBoard(G.sc); h += '<span class="t">' + (b ? 'Best on board: <b>' + b.total + '</b> (' + b.dir + ' from row ' + (b.r + 1) + ', col ' + (b.c + 1) + ')' : 'No valid play on the board') + '</span>'; }
-    grip.disabled = busy || G.over || !ok;
   }
   fb.innerHTML = h;
 }
@@ -769,7 +782,7 @@ function computerTurn() {
   busy = true; G.turn = 1; clearHL(); evaluate(); status('Computer is thinking...');
   setTimeout(() => {
     const m = aiPick(G.crack, S.level);
-    if (m) { commitMove(1, m.cs, m.r); msg = 'Computer played ' + m.r.words[0].w + ' for ' + m.r.total + '.'; HL = { total: m.r.total }; }
+    if (m) { commitMove(1, m.cs, m.r); zoomFit(); msg = 'Computer played ' + m.r.words[0].w + ' for ' + m.r.total + '.'; HL = { total: m.r.total }; }
     else if (G.bag.length >= C.rackSize) { swapComputer(); G.passes++; msg = 'Computer swapped its tiles.'; }
     else { G.passes++; msg = 'Computer passed.'; }
     busy = false; G.turn = 0; checkEnd(); refresh();
@@ -880,38 +893,110 @@ function genMoves(rack) {
 }
 
 
-// ---------- board fit (MiniWord has no zoom or pan: the whole board always fits) ----------
-function apply() { board.style.setProperty('--z', view.s); board.style.transform = 'scale(' + view.s + ')'; }
+// ---------- board view: fits the screen, pinch to zoom, drag to move, auto-zoom while placing ----------
+const clamp = (v, a, b) => Math.max(a, Math.min(b, v));
+function apply() {
+  view.s = clamp(view.s, fit, fit * 4);
+  const mn = vp.clientWidth - BS * view.s; view.x = clamp(view.x, mn, 0); view.y = clamp(view.y, mn, 0);
+  board.style.setProperty('--z', view.s);
+  board.style.transform = 'translate3d(' + view.x + 'px,' + view.y + 'px,0) scale(' + view.s + ')';
+  if (drag && drag.moved) { drag.dirty = true; if (drag.tiles && drag.ghost) sizeGhost(drag); }
+}
+let anim = 0;
+function animateTo(s, x, y, ms) {
+  cancelAnimationFrame(anim);
+  if (REDUCE || S.lite || !ms) { view.s = s; view.x = x; view.y = y; apply(); return; }
+  const s0 = view.s, x0 = view.x, y0 = view.y, t0 = performance.now();
+  const step = t => {
+    const k = Math.min(1, (t - t0) / ms), e = 1 - Math.pow(1 - k, 3);
+    view.s = s0 + (s - s0) * e; view.x = x0 + (x - x0) * e; view.y = y0 + (y - y0) * e; apply();
+    if (k < 1) anim = requestAnimationFrame(step);
+  };
+  anim = requestAnimationFrame(step);
+}
+function zoomTarget(px, py, ns) {   // the view that keeps the board point under (px, py) exactly where it is
+  const r = vp.getBoundingClientRect(); ns = clamp(ns, fit, fit * 4);
+  const bx = (px - r.left - view.x) / view.s, by = (py - r.top - view.y) / view.s;
+  return { s: ns, x: px - r.left - bx * ns, y: py - r.top - by * ns };
+}
+function zoomFit(ms) { animateTo(fit, 0, 0, ms == null ? 220 : ms); }
+function zoomIn(px, py) { const t = zoomTarget(px, py, fit * S.zl / 100); animateTo(t.s, t.x, t.y, 220); }
+function focusOn(list) {   // keep the zoom, put the tiles placed this turn in the middle
+  if (!list.length || view.s <= fit * 1.04) return;
+  let cx = 0, cy = 0; list.forEach(p => { cx += p.c + .5; cy += p.r + .5; }); cx /= list.length; cy /= list.length;
+  const w = vp.clientWidth; animateTo(view.s, w / 2 - cx * CELL * view.s, w / 2 - cy * CELL * view.s, 240);
+}
 function cellAt(x, y) {
   const r = vp.getBoundingClientRect();
   if (x < r.left || x > r.right || y < r.top || y > r.bottom) return null;
-  const c = Math.floor((x - r.left) / view.s / CELL), rr = Math.floor((y - r.top) / view.s / CELL);
+  const c = Math.floor((x - r.left - view.x) / view.s / CELL), rr = Math.floor((y - r.top - view.y) / view.s / CELL);
   return (c < 0 || rr < 0 || c >= N || rr >= N) ? null : { r: rr, c };
 }
-let tapP = null;
+const ptrs = new Map(); let tapP = null, pan = null, pinch = null, lastBT = { t: 0, x: 0, y: 0 };
 vp.addEventListener('pointerdown', e => {
-  if (busy || G.over || drag) return;
-  const q = cellAt(e.clientX, e.clientY), pi = q ? G.placed.findIndex(p => p.r === q.r && p.c === q.c) : -1;
-  if (pi >= 0) {   // a tile placed this turn: drag it (or the whole word)
-    drag = { src: G.grp ? 'wboard' : 'board', pi, id: e.pointerId, x0: e.clientX, y0: e.clientY, x: e.clientX, y: e.clientY, moved: false }; return;
+  if (drag) return;
+  if (ptrs.size === 0 && !busy && !G.over) {
+    const q = cellAt(e.clientX, e.clientY), pi = q ? G.placed.findIndex(p => p.r === q.r && p.c === q.c) : -1;
+    if (pi >= 0) {   // a tile placed this turn: drag it (or the whole word)
+      drag = { src: G.grp ? 'wboard' : 'board', pi, id: e.pointerId, x0: e.clientX, y0: e.clientY, x: e.clientX, y: e.clientY, moved: false }; return;
+    }
   }
-  tapP = { id: e.pointerId, x: e.clientX, y: e.clientY };
+  ptrs.set(e.pointerId, { x: e.clientX, y: e.clientY });
+  try { vp.setPointerCapture(e.pointerId); } catch (_) {}
+  cancelAnimationFrame(anim);
+  if (ptrs.size === 2) {
+    const [a, b] = [...ptrs.values()], r = vp.getBoundingClientRect(), mx = (a.x + b.x) / 2, my = (a.y + b.y) / 2;
+    pinch = { d0: Math.hypot(a.x - b.x, a.y - b.y) || 1, s0: view.s, bx: (mx - r.left - view.x) / view.s, by: (my - r.top - view.y) / view.s };
+    tapP = null; pan = null;
+  } else if (ptrs.size === 1) {
+    tapP = { id: e.pointerId, x: e.clientX, y: e.clientY }; pan = { x: e.clientX, y: e.clientY, vx: view.x, vy: view.y, on: false };
+  }
 });
-vp.addEventListener('pointerup', e => {
-  const t = tapP; tapP = null;
-  if (t && t.id === e.pointerId && Math.hypot(e.clientX - t.x, e.clientY - t.y) < 10) tap(e);
+vp.addEventListener('pointermove', e => {
+  const p = ptrs.get(e.pointerId); if (!p) return;
+  p.x = e.clientX; p.y = e.clientY;
+  if (pinch && ptrs.size >= 2) {
+    const [a, b] = [...ptrs.values()], r = vp.getBoundingClientRect(), mx = (a.x + b.x) / 2, my = (a.y + b.y) / 2;
+    view.s = clamp(pinch.s0 * Math.hypot(a.x - b.x, a.y - b.y) / pinch.d0, fit, fit * 4);
+    view.x = mx - r.left - pinch.bx * view.s; view.y = my - r.top - pinch.by * view.s; apply(); return;
+  }
+  if (pan && view.s > fit * 1.02) {
+    const dx = e.clientX - pan.x, dy = e.clientY - pan.y;
+    if (!pan.on && Math.hypot(dx, dy) > 8) { pan.on = true; tapP = null; }
+    if (pan.on) { view.x = pan.vx + dx; view.y = pan.vy + dy; apply(); }
+  }
 });
-vp.addEventListener('pointercancel', () => { tapP = null; });
-function tap(e) {   // tap a square with a rack tile selected: place it there
+function endPtr(e, cancel) {
+  if (!ptrs.has(e.pointerId)) return;
+  ptrs.delete(e.pointerId);
+  if (ptrs.size < 2) pinch = null;
+  if (ptrs.size === 1) { const [p] = [...ptrs.values()]; pan = { x: p.x, y: p.y, vx: view.x, vy: view.y, on: true }; tapP = null; }
+  const t = tapP;
+  if (!cancel && ptrs.size === 0 && t && t.id === e.pointerId && Math.hypot(e.clientX - t.x, e.clientY - t.y) < 10) tap(e);
+  if (ptrs.size === 0) { tapP = null; pan = null; }
+}
+vp.addEventListener('pointerup', e => endPtr(e, false));
+vp.addEventListener('pointercancel', e => endPtr(e, true));
+vp.addEventListener('wheel', e => {   // mouse wheel zoom (desktop testing)
+  e.preventDefault(); cancelAnimationFrame(anim);
+  const t = zoomTarget(e.clientX, e.clientY, view.s * Math.exp(-e.deltaY * .0016)); view.s = t.s; view.x = t.x; view.y = t.y; apply();
+}, { passive: false });
+function tap(e) {
+  const now = performance.now();
+  if (selected < 0 && now - lastBT.t < 300 && Math.hypot(e.clientX - lastBT.x, e.clientY - lastBT.y) < 30) {   // double-tap: zoom in or out
+    lastBT.t = 0; if (view.s > fit * 1.04) zoomFit(); else zoomIn(e.clientX, e.clientY); return;
+  }
+  lastBT = { t: now, x: e.clientX, y: e.clientY };
   const q = cellAt(e.clientX, e.clientY); if (!q) return;
-  if (selected >= 0) place(selected, q.r, q.c);
+  if (selected >= 0) place(selected, q.r, q.c);   // a rack tile is selected: put it on the tapped square
 }
 
 
 // ---------- dragging tiles (rack, scratch row, board, whole word) ----------
-const OFF = 34, REDUCE = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const OFF = 34, OFFW = 84, REDUCE = matchMedia('(prefers-reduced-motion: reduce)').matches;
 let drag = null, tgEls = [], raf = 0, candEls = [], candR = {}, saveT = 0, dropBuzz = false, lastTap = { i: -1, t: 0 };
-const buzz = ms => { if (S.haptic && navigator.vibrate) { try { navigator.vibrate(ms); } catch (e) {} } };
+let lastBuzz = 0;
+const buzz = ms => { const n = performance.now(); if (!S.haptic || !navigator.vibrate || n - lastBuzz < 70) return; lastBuzz = n; try { navigator.vibrate(ms); } catch (e) {} };
 const saveSoon = () => { clearTimeout(saveT); saveT = setTimeout(save, 400); };
 const taken = (r, c) => G.board[r][c] || G.placed.some(p => p.r === r && p.c === c);
 function insertAt(a, t, j) {   // put t at slot j; neighbours slide over into the nearest gap
@@ -923,6 +1008,7 @@ function insertAt(a, t, j) {   // put t at slot j; neighbours slide over into th
 }
 function light(b) {   // cheap update after a tile moves: no full board rebuild
   drawRack(G.rack, -1, -1); dropBuzz = !!b; evaluate(); dropBuzz = false; saveSoon();
+  if (b) setTimeout(() => focusOn(G.placed), 150);
 }
 function cellTileRemove(r, c) { const d = cells[r * N + c]; d.querySelectorAll('.tile').forEach(e => e.remove()); d.classList.remove('has'); }
 function cellTileAdd(p) { const d = cells[p.r * N + p.c], e = tileEl(p.t); e.classList.add('new'); d.appendChild(e); d.classList.add('has'); }
@@ -943,19 +1029,28 @@ function candidates() {
   if (P.every(p => p.c === P[0].c)) line(P[0].c, false);
   return out;
 }
-function showCand(t) {   // mark the squares the next tile can go on, with the points it would make (greyed)
+function showCand(t) {   // mark the squares the next tile can go on at once; their points (greyed) are worked out a few per frame
   clearCand(); if (!t || t.um) return null; const set = candidates(); if (!set) return null;
-  const L = tLetter(t);
-  set.forEach(k => {
-    const d = cells[k]; d.classList.add('cand'); candEls.push(d);
-    if (!L || S.lite) return;
-    const r = evalMove(pcells().concat([{ r: (k / N) | 0, c: k % N, ch: L, bl: t.ch === '?' }])); candR[k] = r;
-    if (r.err) return;
-    const ok = r.words.every(w => w.ok), b = document.createElement('span'); b.className = 'pv' + (ok ? '' : ' x'); b.textContent = ok ? r.total : '\u2715'; d.appendChild(b);
-  });
+  const L = tLetter(t), keys = [...set], my = candTok = {};
+  keys.forEach(k => { cells[k].classList.add('cand'); candEls.push(cells[k]); });
+  if (!L || S.lite) return set;
+  const base = pcells(); let i = 0;
+  const step = () => {
+    if (candTok !== my) return; const t0 = performance.now();
+    while (i < keys.length && performance.now() - t0 < 5) {
+      const k = keys[i++], d = cells[k];
+      const r = evalMove(base.concat([{ r: (k / N) | 0, c: k % N, ch: L, bl: t.ch === '?' }])); candR[k] = r;
+      if (r.err) continue;
+      const ok = r.words.every(w => w.ok), b = document.createElement('span'); b.className = 'pv' + (ok ? '' : ' x'); b.textContent = ok ? r.total : '\\u2715'; d.appendChild(b);
+    }
+    if (i < keys.length) setTimeout(step, 0);
+  };
+  setTimeout(step, 0);
   return set;
 }
+let candTok = null;
 function clearCand() {
+  candTok = null;
   candEls.forEach(d => { d.classList.remove('cand'); d.querySelectorAll('.pv').forEach(e => e.remove()); }); candEls = []; candR = {};
 }
 function hoverEval(q, t) {
@@ -977,9 +1072,9 @@ function zone(d) {
   return 'board';
 }
 function snap(x, y, d) {   // nearest allowed square to the middle of the dragged tile; sticks to the current one unless clearly beaten
-  const r = d.vr, gx = x, gy = y - OFF;
+  const r = d.vr, gx = x, gy = y - d.off;
   if (gx < r.left || gx > r.right || gy < r.top || gy > r.bottom) return null;
-  const fx = (gx - r.left) / view.s / CELL, fy = (gy - r.top) / view.s / CELL;
+  const fx = (gx - r.left - view.x) / view.s / CELL, fy = (gy - r.top - view.y) / view.s / CELL;
   let best = null, bd = 1e9, curd = null;
   for (let dr = -2; dr <= 2; dr++) for (let dc = -2; dc <= 2; dc++) {
     const rr = Math.floor(fy) + dr, cc = Math.floor(fx) + dc;
@@ -998,7 +1093,7 @@ function clearTgt() {
 function hoverShow(r, el) {
   if (!r) return; if (r.err) { status(r.err); return; }
   const bad = r.words.filter(w => !w.ok), b = document.createElement('span');
-  b.className = 'bd g' + (bad.length ? ' x' : ''); b.textContent = bad.length ? '\u2715' : r.total; el.appendChild(b);
+  b.className = 'bd g' + (bad.length ? ' x' : ''); b.textContent = bad.length ? '\u2715' : r.total; putBd(el, b);
   status(bad.length ? 'Not a word: ' + bad.map(w => w.w).join(', ') : r.words.map(w => w.w + ' ' + w.pts).join(', ') + ' = ' + r.total);
 }
 function updTgt() {   // only does real work when the target changes
@@ -1052,8 +1147,10 @@ function sizeGhost(d) {   // a word ghost is exactly one board square per tile s
   d.ghost.style.transformOrigin = d.gw / 2 + 'px ' + d.gw / 2 + 'px';
 }
 function startDrag(d) {
-  d.moved = true; clearHL(); let el;
+  d.moved = true; clearHL(); clearTimeout(d.lp); let el;
   const grouped = d.src === 'word' || d.src === 'wboard';
+  d.off = grouped ? OFFW : OFF;   // a word is held well above the finger so the board stays in view
+  if (d.src === 'word') { $('scrow').classList.remove('lift'); $('scrow').classList.add('ghosted'); }
   if (d.src === 'rack') { d.t = G.rack[d.i]; el = d.el; el.classList.add('lifted'); selected = -1; }
   else if (d.src === 'scratch') { d.t = G.sc[d.i]; el = d.el; el.classList.add('lifted'); }
   else if (d.src === 'board') {
@@ -1086,7 +1183,11 @@ function loop(t) {   // one update per screen frame
   const d = drag; if (!d || !d.moved) return;
   const dt = Math.min(50, t - (d.tl || t)); d.tl = t;
   const lite = REDUCE || S.lite, k = Math.min(1, (t - d.t0) / 90), e = 1 - (1 - k) * (1 - k);
-  d.ghost.style.transform = 'translate3d(' + (d.x - d.gw / 2) + 'px,' + (d.y - (lite ? OFF : OFF * e) - d.gw / 2) + 'px,0) scale(' + (lite ? 1 : 1 + .12 * e) + ')';
+  d.ghost.style.transform = 'translate3d(' + (d.x - d.gw / 2) + 'px,' + (d.y - (lite ? d.off : d.off * e) - d.gw / 2) + 'px,0) scale(' + (lite || d.tiles ? 1 : 1 + .12 * e) + ')';
+  if (S.zl > 100 && !d.zdone && view.s < fit * 1.05) {   // first time over the board: after a short hover, zoom in around the tile
+    if (zone(d) === 'board' && inR(d.x, d.y - d.off, d.vr, 0)) { if (d.hov == null) d.hov = t; else if (t - d.hov >= S.zd) { d.zdone = true; zoomIn(d.x, d.y - d.off); } }
+    else d.hov = null;
+  }
   if (d.dirty) { d.dirty = false; updTgt(); }
   raf = requestAnimationFrame(loop);
 }
@@ -1103,12 +1204,14 @@ $('rack').addEventListener('pointerdown', e => {
 });
 $('scrow').addEventListener('pointerdown', e => {
   const el = e.target.closest('.tile'); if (!el || busy || G.over || drag) return;
-  drag = { src: 'scratch', i: +el.parentNode.dataset.i, el, id: e.pointerId, x0: e.clientX, y0: e.clientY, x: e.clientX, y: e.clientY, moved: false };
-});
-$('scGrip').addEventListener('pointerdown', e => {
-  if (busy || G.over || drag) return;
-  if (G.placed.length) { status('Recall your tiles from the board first, then drag the scratch row.'); return; }
-  drag = { src: 'word', id: e.pointerId, x0: e.clientX, y0: e.clientY, x: e.clientX, y: e.clientY, moved: false };
+  const d = { src: 'scratch', i: +el.parentNode.dataset.i, el, id: e.pointerId, x0: e.clientX, y0: e.clientY, x: e.clientX, y: e.clientY, moved: false };
+  drag = d;
+  d.lp = setTimeout(() => {   // press and hold, without moving: the whole word comes up, ready to be dragged to the board
+    if (drag !== d || d.moved) return;
+    if (G.placed.length) { status('Recall your tiles from the board first, then lift the scratch row.'); return; }
+    if (!scOK()) { status(G.sc.length ? 'That is not a word yet, so it cannot be lifted.' : ''); return; }
+    d.src = 'word'; $('scrow').classList.add('lift'); buzz(25); status('Word lifted. Drag it to the board.');
+  }, 380);
 });
 window.addEventListener('pointermove', e => {
   if (!drag || e.pointerId !== drag.id) return;
@@ -1131,17 +1234,19 @@ function endDrag(e, cancelled) {
       const now = Date.now(), key = 's' + d.i, dbl = lastTap.i === key && now - lastTap.t < 320; lastTap = { i: key, t: now };
       if (dbl) { lastTap.t = 0; scDouble(G.sc[d.i]); } else status('Double-tap a scratch tile to send it on, or drag it.');
     } else if (d.src === 'board') { backToRack(G.placed.splice(d.pi, 1)[0]); refresh(); }
+    else if (d.src === 'word') status('Drag the lifted word onto the board.');
     else status('Drag to move the whole word, or press Recall.');
     scFeedback(); return;
   }
   drawRack(G.rack, -1, -1); drawScratch(G.sc, -1, -1);
-  let fx = d.x, fy = d.y - OFF, fs = 1;
-  const cellXY = (r, c) => [d.vr.left + (c + .5) * CELL * view.s, d.vr.top + (r + .5) * CELL * view.s];
+  clearTimeout(d.lp); $('scrow').classList.remove('lift', 'ghosted');
+  let fx = d.x, fy = d.y - d.off, fs = 1;
+  const cellXY = (r, c) => [d.vr.left + view.x + (c + .5) * CELL * view.s, d.vr.top + view.y + (r + .5) * CELL * view.s];
   const landFs = () => Math.max(.5, CELL * view.s * .95 / d.gw);
   const home = () => {
     if (d.src === 'rack') { const s = d.sl[d.i]; fx = s.x; fy = s.y; status('Missed. The tile went back where it was.'); }
     else if (d.src === 'scratch') { const s = d.ss[d.i]; fx = s.x; fy = s.y; }
-    else if (d.src === 'word') { const g = $('scGrip').getBoundingClientRect(); fx = g.left + g.width / 2; fy = g.top + g.height / 2; fs = .5; }
+    else if (d.src === 'word') { const g = $('scrow').getBoundingClientRect(); fx = g.left + g.width / 2; fy = g.top + g.height / 2; fs = .5; }
     else if (d.src === 'wboard') { d.items.forEach(p => { G.placed.push(p); cellTileAdd(p); }); [fx, fy] = cellXY(d.origin.r, d.origin.c); light(); }
     else { const p = { r: d.origin.r, c: d.origin.c, t: d.t, slot: d.slot }; G.placed.push(p); cellTileAdd(p); [fx, fy] = cellXY(p.r, p.c); light(); }
   };
@@ -1210,7 +1315,7 @@ function showStats() {
 
 // ---------- buttons and settings ----------
 function startNew() {
-  newGame(); ['end', 'set', 'menu'].forEach(i => $(i).classList.remove('on')); busy = false; refresh();
+  zoomFit(0); newGame(); ['end', 'set', 'menu'].forEach(i => $(i).classList.remove('on')); busy = false; refresh();
   if (G.turn === 1) computerTurn();
 }
 $('bShuffle').onclick = shuffle;
@@ -1231,9 +1336,12 @@ $('mSet').onclick = () => {
   $('sLsz').value = S.lsz; $('sPsz').value = S.psz; $('sTheme').value = S.theme; $('sTiles').value = S.tiles; $('sFin').value = S.fin; $('sSkin').value = S.skin;
   $('sRare').checked = S.noRare; $('hBal').checked = S.hBal; $('hDup').checked = S.hDup; $('hHard').checked = S.hHard; $('sBagOn').checked = S.showBag;
   $('sHap').checked = S.haptic; $('sLite').checked = S.lite; $('sScr').checked = S.scratch; $('sBest').checked = S.sBest;
-  $('sLevel').value = S.level; $('sFirst').value = S.first; $('set').classList.add('on');
+  $('sLevel').value = S.level; $('sFirst').value = S.first; $('sZl').value = S.zl; $('sZd').value = S.zd; updZ(); $('set').classList.add('on');
 };
 $('sClose').onclick = () => $('set').classList.remove('on');
+const updZ = () => { $('vZl').textContent = S.zl <= 100 ? 'off' : S.zl + '%'; $('vZd').textContent = S.zd + ' ms'; };
+$('sZl').oninput = e => { S.zl = +e.target.value; updZ(); save(); };
+$('sZd').oninput = e => { S.zd = +e.target.value; updZ(); save(); };
 $('sLsz').oninput = e => { S.lsz = +e.target.value; applySettings(); save(); };
 $('sPsz').oninput = e => { S.psz = +e.target.value; applySettings(); save(); };
 $('sTheme').onchange = e => { S.theme = e.target.value; applySettings(); save(); };
@@ -1252,9 +1360,18 @@ $('sFile').onchange = async e => {
 $('sBuiltin').onclick = async () => { await idb(s => s.delete('dict')); $('set').classList.remove('on'); await loadDict(); status(msg); };
 $('endNew').onclick = () => { if (SIM) { stopSim(); return; } startNew(); };
 $('endClose').onclick = () => { $('end').classList.remove('on'); if (SIM) stopSim(); };
-const dirLabel = () => { $('bDir').textContent = S.dir === 'across' ? '\u2192 Across' : '\u2193 Down'; };
+const dirLabel = () => { const a = S.dir === 'across'; $('bDir').innerHTML = '<span class="' + (a ? 'on' : '') + '">\u2192</span><span class="' + (a ? '' : 'on') + '">\u2193</span>'; };
 $('bDir').onclick = () => { S.dir = S.dir === 'across' ? 'down' : 'across'; dirLabel(); save(); };
-function relayout() { fit = vp.clientWidth / BS; view.s = fit; apply(); }
+function fitBoard() {   // the board takes the full width of the other rows, or all the height that is left if the screen is short
+  const app = $('app'), cs = getComputedStyle(app); let others = 0, n = 0;
+  for (const el of app.children) { if (el.id === 'bw' || el.style.display === 'none') continue; others += el.offsetHeight; n++; }
+  const gap = parseFloat(cs.rowGap) || 0, availH = app.clientHeight - parseFloat(cs.paddingTop) - parseFloat(cs.paddingBottom) - others - gap * n;
+  const availW = app.clientWidth - parseFloat(cs.paddingLeft) - parseFloat(cs.paddingRight);
+  $('bw').style.width = Math.floor(Math.max(240, Math.min(availW, availH))) + 'px';
+}
+function relayout() {
+  const ratio = fit ? view.s / fit : 1; fitBoard(); fit = vp.clientWidth / BS; view.s = fit * Math.max(1, ratio); apply();
+}
 function applySettings() {
   if (S.tiles === 'wood') S.tiles = 'honey';
   const b = document.body; b.className = 'th-' + S.theme + ' ts-' + S.tiles + ' fin-' + S.fin + (S.lite ? ' lite' : '') + (S.scratch ? '' : ' noscr');
@@ -1270,15 +1387,14 @@ function applySettings() {
   document.querySelector('meta[name=theme-color]').content = getComputedStyle(b).getPropertyValue('--bg').trim() || '#252D38';
   dirLabel(); requestAnimationFrame(relayout);
 }
-window.addEventListener('resize', relayout);
+window.addEventListener('resize', relayout); window.addEventListener('orientationchange', relayout);
 
 // ---------- start ----------
 load(); applySettings(); buildBoard();
 $('rack').style.gridTemplateColumns = 'repeat(' + C.rackSize + ',1fr)'; $('scrow').style.gridTemplateColumns = 'repeat(' + SMAX + ',1fr)'; $('swapList').style.gridTemplateColumns = 'repeat(' + C.rackSize + ',1fr)';
 document.querySelectorAll('[data-i]').forEach(e => { e.innerHTML = ICONS[e.dataset.i]; });
 $('bagic').innerHTML = ICONS.bag;
-const logoTile = tileEl({ ch: 'M' }); $('logo').appendChild(logoTile);
-fit = vp.clientWidth / BS; view.s = fit; apply();
+fitBoard(); fit = vp.clientWidth / BS; view.s = fit; apply();
 if (!G) newGame();
 window.BW = window.BW || {}; window.BW.startSim = startSim;
 render(); evaluate();
